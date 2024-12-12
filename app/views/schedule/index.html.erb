@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="panel panel-primary filterable">
+        <div class="panel-heading">
+          <% if student_logged_in? %><h3 class="panel-title">本人课表</h3>
+          <% end %>
+        </div>
+
+        <div class="panel-body">
+            <%= link_to "返回", courses_path, :class => "btn btn-info"%>
+          <table class="table table-responsive table-condensed table-hover">
+            <thead>
+            <tr>
+              <th>节数/星期</th>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+            <tbody>
+                <% local_val = 0%>
+                 <% @course.each do |course| %>
+                <tr>
+                    <!--TODO:sql logic show td -->
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

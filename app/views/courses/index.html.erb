@@ -16,6 +16,9 @@
         </div>
 
         <div class="panel-body">
+          <% if student_logged_in? %>
+            <%= link_to "查看课表", schedule_path, :class => "btn btn-outline-dark"%>
+          <% end %>
           <table class="table table-responsive table-condensed table-hover">
             <thead>
             <tr>

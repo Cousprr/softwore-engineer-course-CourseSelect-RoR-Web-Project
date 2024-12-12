@@ -84,6 +84,16 @@ class CoursesController < ApplicationController
     redirect_to courses_path, flash: flash
   end
 
+  def search
+    if params[:my_time]=="" and params[:my_classchoice]=="" and params[:my_classname]==""
+      @courses = Course.where(:open=>true).paginate(page: params[:page], per_page: 4)
+    else
+    @courses = Course.where("course_time = ? AND course_type = ? AND name = ? AND open = ?", params[:my_time], params[:my_classchoice], params[:my_classname], true).paginate(page: params[:page], per_page: 4)
+    @courses = [] if @courses.nil?
+    end
+    render 'list'
+  end
+
 
   #-------------------------for both teachers and students----------------------
 

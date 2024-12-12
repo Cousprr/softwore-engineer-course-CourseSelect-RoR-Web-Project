@@ -9,6 +9,35 @@
         <div class="panel-heading">
           <h3 class="panel-title">选修课程</h3>
         </div>
+        <br>
+        <!--TODO:add choose table -->
+        <div style="width: 60%; margin: 0 auto; text-align: center;">
+          <form action="/courses/search" method="get">
+          <label class="form-label">上课时间</label>
+          <select class="form-select" aria-label="Default select example" name="my_time">
+            <option selected value="">Open this select menu1</option>
+            <option value="周二(7-8)">周二(7-8)</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label class="form-label">课程属性</label>
+          <select class="form-select" aria-label="Default select example" name="my_classchoice">
+            <option selected value="">Open this select menu2</option>
+            <option value="公共选修课">公共选修课</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label class="form-label">课程名称</label>
+          <select class="form-select" aria-label="Default select example" name="my_classname">
+            <option selected value="">Open this select menu3</option>
+            <option value="Python语言导论">Python语言导论</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <button type="submit" class="btn btn-success btn-sm">查询</button>
+          </form>
+        </div>
+
         <div class="panel-body" style="min-height: 450px">
           <table class="table table-striped table-hover">
             <thead>

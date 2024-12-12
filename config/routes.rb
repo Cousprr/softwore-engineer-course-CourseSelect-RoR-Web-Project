@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'schedule/index'
+
+  get 'credit/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -26,6 +30,7 @@ Rails.application.routes.draw do
     end
     collection do
       get :list
+      get :search
     end
   end
 
@@ -36,7 +41,8 @@ Rails.application.routes.draw do
   post 'sessions/login' => 'sessions#create'
   delete 'sessions/logout' => 'sessions#destroy'
 
-
+  get '/credit', to: 'credit#index', as: 'credit'
+  get '/schedule', to: 'schedule#index', as: 'schedule'
   # Example resource route with options:
   #   resources :products do
   #     member do

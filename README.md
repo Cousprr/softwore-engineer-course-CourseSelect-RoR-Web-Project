@@ -1,7 +1,8 @@
 # ruby
 ## this is for SE course
 
-<p>THINGS FOR START RAILS<br>
+<p>
+### THINGS FOR START RAILS<br>
 use sources in Gemfile to install dependences<br>
 '$ bundle install'<br>
 '$ rake db:create'<br>
@@ -11,9 +12,10 @@ finally run rails to begin the web server<br>
 '$ rails server -p 3000'
 </p>
 
-<p>THINGS ON RVM<br>
+<p>
+### THINGS ON RVM<br>
 if you want to change ruby version, please make sure run this command first:<br>
-`$ source /usr/share/rvm/scripts/rvm` <br>
+```$ source /usr/share/rvm/scripts/rvm``` <br>
 then you can change ortherwise will come error:<br>
 `$ rvm use 2.3.8` <br>
 this will set as default:<br>
@@ -23,15 +25,16 @@ this command will show ruby version which has been downloaded:<br>
 watch this for more information: https://ruby-china.org/wiki/rvm-guide
 </p>
 
-<p>login
-student1@test.com
-teacher1@test.com
-admin@test.com
-
+<p>login<br>
+student1@test.com<br>
+teacher1@test.com<br>
+admin@test.com<br>
+<br>
 密码：`password`
 </p>
 
-<p>TO-DO LIST
+<p>
+### TO-DO LIST
 
 1,课程查询
 “选修课程”界面键入或选择过滤条件

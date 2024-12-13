@@ -1,7 +1,7 @@
 # ruby
 ## this is for SE course
 
-<p>
+
 * THINGS FOR START RAILS<br>
 use sources in Gemfile to install dependences<br>
 `$ bundle install`<br>
@@ -10,9 +10,9 @@ use sources in Gemfile to install dependences<br>
 `$ rake db:seed`<br>
 finally run rails to begin the web server<br>
 `$ rails server -p 3000`
-</p>
 
-<p>
+
+
 * THINGS ON RVM<br>
 if you want to change ruby version, please make sure run this command first:<br>
 `$ source /usr/share/rvm/scripts/rvm` <br>
@@ -23,43 +23,42 @@ this will set as default:<br>
 this command will show ruby version which has been downloaded:<br>
 `$ rvm list` <br>
 watch this for more information: https://ruby-china.org/wiki/rvm-guide
-</p>
 
-<p>login<br>
+
+* login<br>
 student1@test.com<br>
 teacher1@test.com<br>
 admin@test.com<br>
 <br>
 密码：`password`
-</p>
 
-<p>
-### TO-DO LIST
 
-1,课程查询
-“选修课程”界面键入或选择过滤条件
-<!--
-DONE:choose table; choose logic; when not choose, show all
-UNFINISH:choose one of three options; default value fillin
--->
-2,学分统计
-已选课程中“公共选修课”、“专业学位课”以及“总学分”的统计信息，了解已获取学分和规定修习学分之间的差距
-<!--
-DONE: table artifice
-UNFINISH:logic; FIXME:is the score steady?
--->
-3,课表查看
-“已选课程”界面，点击“查看课表”按钮，能够看到课表信息
-<!--
-DONE: table artifice
-UNFINISH:logic
--->
-4,选课冲突处理
-“选修课程”界面，点击课程 A 的“加入课程”按钮:
-(1)若甲已经选 过 A 课程，则系统给出“请不要重复选课”的提示；
-(2)若课程 A 的选课人数超过限选人数，则系统给出“课程 A 选课人数已满”的提示；
-(3)若课程 A 的上课时间和甲已经选择的课程 B 上课时间冲突，则系统给出“课程 A 和课程 B 的上课时间冲突”的提示
-<!--
-not begin
--->
-</p>
+
+* TO-DO LIST<br>
+1.课程查询<br>
+“选修课程”界面键入或选择过滤条件<br>
+<font color=green>_DONE:choose table; choose logic; when not choose, show all_</font>
+<br>
+<font color=red>_UNFINISH:choose one of three options; default value fillin_</font>
+<br><br>
+2.学分统计<br>
+已选课程中“公共选修课”、“专业学位课”以及“总学分”的统计信息，了解已获取学分和规定修习学分之间的差距<br>
+<font color=green>_DONE: table artifice_</font>
+<br>
+<font color=red>_UNFINISH:logic; FIXME:is the score steady?_</font>
+<br><br>
+3.课表查看<br>
+“已选课程”界面，点击“查看课表”按钮，能够看到课表信息<br>
+<font color=green>_DONE: table artifice_</font>
+<br>
+<font color=red>_UNFINISH:logic_</font>
+<br><br>
+4.选课冲突处理<br>
+“选修课程”界面，点击课程 A 的“加入课程”按钮:<br>
+(1)若甲已经选 过 A 课程，则系统给出“请不要重复选课”的提示；<br>
+(2)若课程 A 的选课人数超过限选人数，则系统给出“课程 A 选课人数已满”的提示；<br>
+(3)若课程 A 的上课时间和甲已经选择的课程 B 上课时间冲突，则系统给出“课程 A 和课程 B 的上课时间冲突”的提示<br>
+<font color=yellow>_not begin_</font>
+<!--<font color=green>_DONE:</font>
+<br>
+<font color=red>UNFINISH:_</font>-->

@@ -2,20 +2,20 @@
 ## this is for SE course
 
 <p>
-### THINGS FOR START RAILS<br>
+* THINGS FOR START RAILS<br>
 use sources in Gemfile to install dependences<br>
-'$ bundle install'<br>
-'$ rake db:create'<br>
-'$ rake db:migrate'<br>
-'$ rake db:seed'<br>
+`$ bundle install`<br>
+`$ rake db:create`<br>
+`$ rake db:migrate`<br>
+`$ rake db:seed`<br>
 finally run rails to begin the web server<br>
-'$ rails server -p 3000'
+`$ rails server -p 3000`
 </p>
 
 <p>
-### THINGS ON RVM<br>
+* THINGS ON RVM<br>
 if you want to change ruby version, please make sure run this command first:<br>
-```$ source /usr/share/rvm/scripts/rvm``` <br>
+`$ source /usr/share/rvm/scripts/rvm` <br>
 then you can change ortherwise will come error:<br>
 `$ rvm use 2.3.8` <br>
 this will set as default:<br>

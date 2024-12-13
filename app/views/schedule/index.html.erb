@@ -22,12 +22,51 @@
               <th>星期日</th>
             </tr>
             <tbody>
-                <% local_val = 0%>
-                 <% @course.each do |course| %>
-                <tr>
-                    <!--TODO:sql logic show td -->
-                </tr>
-            <% end %>
+              <% local_course = 0 %>
+              <% @course.each do |course| %>
+                <% local_time = 1 %>
+                <% while local_time != 10 %>
+                  <% if @time_code[local_course] != local_time %>
+                    <tr>
+                      <td><%= local_time %><% local_time=local_time+1 %></td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                    </tr>
+                  <% else %>
+                    <tr>
+                      <!--TODO:sql logic show td -->
+                      <td><%= local_time %><% local_time=local_time+1 %></td>
+                      <% if @week_code[local_course] == "周一" %><td><%= course.name %></td>
+                      <% else %><td> </td>
+                      <% end %>
+                      <% if @week_code[local_course] == "周二" %><td><%= course.name %></td>
+                      <% else %><td> </td>
+                      <% end %>
+                      <% if @week_code[local_course] == "周三" %><td><%= course.name %></td>
+                      <% else %><td> </td>
+                      <% end %>
+                      <% if @week_code[local_course] == "周四" %><td><%= course.name %></td>
+                      <% else %><td> </td>
+                      <% end %>
+                      <% if @week_code[local_course] == "周五" %><td><%= course.name %></td>
+                      <% else %><td> </td>
+                      <% end %>
+                      <% if @week_code[local_course] == "周六" %><td><%= course.name %></td>
+                      <% else %><td> </td>
+                      <% end %>
+                      <% if @week_code[local_course] == "周日" %><td><%= course.name %></td>
+                      <% else %><td> </td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                <% end %>
+                <% local_course=local_course+1 %>
+              <% end %>
             </tbody>
           </table>
         </div>

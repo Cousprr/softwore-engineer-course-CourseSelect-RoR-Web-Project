@@ -3,6 +3,7 @@ class CoursesController < ApplicationController
   before_action :student_logged_in, only: [:select, :quit, :list]
   before_action :teacher_logged_in, only: [:new, :create, :edit, :destroy, :update, :open, :close]#add open by qiao
   before_action :logged_in, only: :index
+  before_action :set_courses_all, only: [:list, :search]
 
   #-------------------------for teachers----------------------
 
@@ -84,13 +85,35 @@ class CoursesController < ApplicationController
     redirect_to courses_path, flash: flash
   end
 
+  def set_courses_all
+    @courses_all=Course.where(:open=>true)
+  end
+
   def search
-    if params[:my_time]=="" and params[:my_classchoice]=="" and params[:my_classname]==""
-      @courses = Course.where(:open=>true).paginate(page: params[:page], per_page: 4)
-    else
-    @courses = Course.where("course_time = ? AND course_type = ? AND name = ? AND open = ?", params[:my_time], params[:my_classchoice], params[:my_classname], true).paginate(page: params[:page], per_page: 4)
-    @courses = [] if @courses.nil?
+    check_time=params[:check_time]=="1"
+    check_choice=params[:check_choice]=="1"
+    check_name=params[:check_name]=="1"
+    conditions = []
+    values = []
+
+    if check_time
+      conditions << "course_time = ?"
+      values << params[:my_time_day] + params[:my_time_hour]
     end
+    if check_choice
+      conditions << "course_type = ?"
+      values << params[:my_classchoice]
+    end
+    if check_name
+      conditions << "name = ?"
+      values << params[:my_classname]
+    end
+
+    conditions << "open = ?"
+    values << true
+
+    @courses = Course.where(conditions.join(" AND "), *values).paginate(page: params[:page], per_page: 4)
+    @courses = [] if @courses.to_a.empty?
     render 'list'
   end
 

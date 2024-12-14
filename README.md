@@ -36,16 +36,13 @@ admin@test.com<br><br>
 * TO-DO LIST<br>
 1.课程查询<br>
 “选修课程”界面键入或选择过滤条件<br>
-<font color=green>_DONE:choose table; choose logic; when not choose, show all_</font><br>
-<font color=red>_UNFINISH:choose one of three options; default value fillin_</font><br><br>
+<font color=green>_DONE: all_</font><br>
 2.学分统计<br>
 已选课程中“公共选修课”、“专业学位课”以及“总学分”的统计信息，了解已获取学分和规定修习学分之间的差距<br>
-<font color=green>_DONE: table artifice_</font><br>
-<font color=red>_UNFINISH:logic; FIXME:is the score steady?_</font><br><br>
+<font color=green>_DONE: all_</font><br>
 3.课表查看<br>
 “已选课程”界面，点击“查看课表”按钮，能够看到课表信息<br>
-<font color=green>_DONE: table artifice_</font><br>
-<font color=red>_UNFINISH:logic_</font><br><br>
+<font color=green>_DONE: all_</font><br>
 4.选课冲突处理<br>
 “选修课程”界面，点击课程 A 的“加入课程”按钮:<br>
 (1)若甲已经选 过 A 课程，则系统给出“请不要重复选课”的提示；<br>

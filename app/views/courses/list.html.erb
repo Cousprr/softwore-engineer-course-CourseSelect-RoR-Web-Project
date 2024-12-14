@@ -10,31 +10,52 @@
           <h3 class="panel-title">选修课程</h3>
         </div>
         <br>
-        <!--TODO:add choose table -->
-        <div style="width: 60%; margin: 0 auto; text-align: center;">
+        
+        <div style="width: 80%; margin: 0 auto; text-align: center;">
           <form action="/courses/search" method="get">
-          <label class="form-label">上课时间</label>
-          <select class="form-select" aria-label="Default select example" name="my_time">
-            <option selected value="">Open this select menu1</option>
-            <option value="周二(7-8)">周二(7-8)</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <label class="form-label">课程属性</label>
-          <select class="form-select" aria-label="Default select example" name="my_classchoice">
-            <option selected value="">Open this select menu2</option>
-            <option value="公共选修课">公共选修课</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <label class="form-label">课程名称</label>
-          <select class="form-select" aria-label="Default select example" name="my_classname">
-            <option selected value="">Open this select menu3</option>
-            <option value="Python语言导论">Python语言导论</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <button type="submit" class="btn btn-success btn-sm">查询</button>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check_time" value="1">
+            <label class="form-label">上课时间</label>
+            <select class="form-select" aria-label="Default select example" name="my_time_day" style="width: 100px;">
+              <option value="周一">周一</option>
+              <option value="周二">周二</option>
+              <option value="周三">周三</option>
+              <option value="周四">周四</option>
+              <option value="周五">周五</option>
+              <option value="周六">周六</option>
+              <option value="周日">周日</option>
+            </select>
+            <select class="form-select" aria-label="Default select example" name="my_time_hour" style="width: 100px;">
+              <option value="(1-2)">（1-2）</option>
+              <option value="(3-4)">（3-4）</option>
+              <option value="(5-6)">（5-6）</option>
+              <option value="(7-8)">（7-8）</option>
+              <option value="(9-10)">（9-10）</option>
+              <option value="(9-11)">（9-11）</option>
+            </select>
+            &nbsp;
+            <input class="form-check-input" type="checkbox" name="check_choice" value="1">
+            <label class="form-label">课程属性</label>
+            <select class="form-select" aria-label="Default select example" name="my_classchoice">
+              <option value="公共选修课">公共选修课</option>
+              <option value="一级学科普及课">一级学科普及课</option>
+              <option value="一级学科核心课">一级学科核心课</option>
+              <option value="专业普及课">专业普及课</option>
+              <option value="专业核心课">专业核心课</option>
+              <option value="专业研讨课">专业研讨课</option>
+            </select>
+            &nbsp;
+            <input class="form-check-input" type="checkbox" name="check_name" value="1">
+            <label class="form-label">课程名称</label>
+            <select class="form-select" aria-label="Default select example" name="my_classname">
+              <% @courses_all.each do |course| %>
+                <option value= "<%= course.name %>" ><%= course.name %></option>
+              <% end %>
+            </select>
+            &nbsp;
+            <button type="submit" class="btn btn-success btn-sm">查询</button>
+          </div>
+          
           </form>
         </div>
 

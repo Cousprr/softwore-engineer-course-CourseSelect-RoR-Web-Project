@@ -48,6 +48,5 @@ admin@test.com<br><br>
 (1)若甲已经选 过 A 课程，则系统给出“请不要重复选课”的提示；<br>
 (2)若课程 A 的选课人数超过限选人数，则系统给出“课程 A 选课人数已满”的提示；<br>
 (3)若课程 A 的上课时间和甲已经选择的课程 B 上课时间冲突，则系统给出“课程 A 和课程 B 的上课时间冲突”的提示<br>
-<font color=yellow>_not begin_</font>
-<!--<font color=green>_DONE:</font><br>
-<font color=red>UNFINISH:_</font>-->
+<font color=green>_DONE:flash show;basic compare</font><br>
+<font color=red>UNFINISH:complex time processing, e.g.(5-6)vs(5-7)_</font>

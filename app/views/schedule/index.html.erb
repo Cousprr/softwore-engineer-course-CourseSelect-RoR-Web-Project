@@ -9,7 +9,7 @@
         <div class="panel-body">
             <%= link_to "返回", courses_path, :class => "btn btn-outline-dark"%>
           <div>
-          <table class="table table-responsive table-condensed table-hover table-bordered">
+          <table class="table table-condensed table-hover table-bordered">
             <thead>
             <tr>
               <th>节数/星期</th>
@@ -30,7 +30,7 @@
                 <td>
                   <% @course.zip(@time_code,@week_code).each do|course,time,week| %>
                     <% if time==local_time and week=="周一" %>
-                      <%= course.name %><br>
+                      <%= course.name %><%= course.course_time[2,6] %><br>
                       [<%= course.class_room %>][<%= course.course_week %>]<br>
                       <%local_flat=local_flat+1%>
                     <% else %>
@@ -41,7 +41,7 @@
                 <td>
                   <% @course.zip(@time_code,@week_code).each do|course,time,week| %>
                     <% if time==local_time and week=="周二" %>
-                      <%= course.name %><br>
+                      <%= course.name %><%= course.course_time[2,6] %><br>
                       [<%= course.class_room %>][<%= course.course_week %>]<br>
                       <%local_flat=local_flat+1%>
                     <% else %>
@@ -52,7 +52,7 @@
                 <td>
                   <% @course.zip(@time_code,@week_code).each do|course,time,week| %>
                     <% if time==local_time and week=="周三" %>
-                      <%= course.name %><br>
+                      <%= course.name %><%= course.course_time[2,6] %><br>
                       [<%= course.class_room %>][<%= course.course_week %>]<br>
                       <%local_flat=local_flat+1%>
                     <% else %>
@@ -63,7 +63,7 @@
                 <td>
                   <% @course.zip(@time_code,@week_code).each do|course,time,week| %>
                     <% if time==local_time and week=="周四" %>
-                      <%= course.name %><br>
+                      <%= course.name %><%= course.course_time[2,6] %><br>
                       [<%= course.class_room %>][<%= course.course_week %>]<br>
                       <%local_flat=local_flat+1%>
                     <% else %>
@@ -74,7 +74,7 @@
                 <td>
                   <% @course.zip(@time_code,@week_code).each do|course,time,week| %>
                     <% if time==local_time and week=="周五" %>
-                      <%= course.name %><br>
+                      <%= course.name %><%= course.course_time[2,6] %><br>
                       [<%= course.class_room %>][<%= course.course_week %>]<br>
                       <%local_flat=local_flat+1%>
                     <% else %>
@@ -85,7 +85,7 @@
                 <td>
                   <% @course.zip(@time_code,@week_code).each do|course,time,week| %>
                     <% if time==local_time and week=="周六" %>
-                      <%= course.name %><br>
+                      <%= course.name %><%= course.course_time[2,6] %><br>
                       [<%= course.class_room %>][<%= course.course_week %>]<br>
                       <%local_flat=local_flat+1%>
                     <% else %>
@@ -96,7 +96,7 @@
                 <td>
                   <% @course.zip(@time_code,@week_code).each do|course,time,week| %>
                     <% if time==local_time and week=="周日" %>
-                      <%= course.name %><br>
+                      <%= course.name %><%= course.course_time[2,6] %><br>
                       [<%= course.class_room %>][<%= course.course_week %>]<br>
                       <%local_flat=local_flat+1%>
                     <% else %>

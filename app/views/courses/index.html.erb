@@ -37,6 +37,8 @@
                   <td><%= course.credit %></td>
                   <td><%= course.exam_type %></td>
                   <td><%= course.teacher.name %></td>
+                  <td><%= course.course_time %>1</td><!-- code for test;remember to delete-->
+                  <td><%= course.course_week %>1</td>
 
                   <% if teacher_logged_in? %>
                       <td><%= link_to "编辑", edit_course_url(course), class: 'btn btn-xs btn-info' %></td>

@@ -71,10 +71,34 @@ class CoursesController < ApplicationController
     @course=tmp
   end
 
+  def compare(sel_course)
+    type=0
+    current_user.courses.each do |my_course|
+      if my_course.name == sel_course.name
+        type=1
+        break
+      elsif my_course.course_time == sel_course.course_time
+        type=2
+        @conflict=my_course
+        break
+      end
+    end
+    type
+  end
+
   def select
     @course=Course.find_by_id(params[:id])
-    current_user.courses<<@course
-    flash={:suceess => "成功选择课程: #{@course.name}"}
+    type=compare(@course)
+    if type==1
+      flash={:warning => "你过去已经选择了课程：#{@course.name}"}
+    elsif @course.limit_num.to_i < @course.student_num.to_i
+      flash={:warning => "课程#{@course.name}选课人数已满"}
+    elsif type==2
+      flash={:warning => "课程 #{@course.name} 和课程 #{@conflict.name} 的上课时间冲突"}
+    else
+      current_user.courses<<@course
+      flash={:success => "成功选择课程: #{@course.name}"}
+    end
     redirect_to courses_path, flash: flash
   end
 

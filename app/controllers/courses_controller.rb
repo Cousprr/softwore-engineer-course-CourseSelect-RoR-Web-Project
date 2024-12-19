@@ -74,12 +74,20 @@ class CoursesController < ApplicationController
   def compare(sel_course)
     type=0
     current_user.courses.each do |my_course|
-      if my_course.name == sel_course.name
+      ran_sel =sel_course.course_time[3]=='9' ? (sel_course.course_time[3]..sel_course.course_time[5,2]) : (sel_course.course_time[3]..sel_course.course_time[5]);
+      ran_my =my_course.course_time[3]=='9' ? (my_course.course_time[3]..my_course.course_time[5,2]) : (my_course.course_time[3]..my_course.course_time[5]);
+        
+      if my_course.course_time[1] == sel_course.course_time[1]
+        ran_sel.each do |i|
+          if ran_my.include?(i)
+            type=2
+            @conflict=my_course
+            break
+          end
+        end
+        if type==2 then break end
+      elsif my_course.name == sel_course.name
         type=1
-        break
-      elsif my_course.course_time == sel_course.course_time
-        type=2
-        @conflict=my_course
         break
       end
     end
@@ -91,8 +99,8 @@ class CoursesController < ApplicationController
     type=compare(@course)
     if type==1
       flash={:warning => "你过去已经选择了课程：#{@course.name}"}
-    elsif @course.limit_num.to_i < @course.student_num.to_i
-      flash={:warning => "课程#{@course.name}选课人数已满"}
+    elsif @course.limit_num.to_i <= @course.student_num.to_i
+      flash={:warning => "课程 #{@course.name} 选课人数已满"}
     elsif type==2
       flash={:warning => "课程 #{@course.name} 和课程 #{@conflict.name} 的上课时间冲突"}
     else
